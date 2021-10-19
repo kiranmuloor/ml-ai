@@ -11,14 +11,10 @@ This project's purpose is to provide the world with an easy way to try clothes w
 
 This problem can be approached in multiple ways:
 
-●	Identify the upper body of the model image to get the color-coded skeleton pose estimation
-
-●	The reference garment should be modified to fit the pose of the model image and transformed as the skeleton generated.
-
-●	Model image should be segmented for upper body in order to transfer the new style. Then stitch the transformed reference garment to the segmented model image.
-
-●	To create the new look, refine the fit and shape of the garment to get the final result of the source garment to Model.
-
+- Identify the upper body of the model image to get the color-coded skeleton pose estimation
+- The reference garment should be modified to fit the pose of the model image and transformed as the skeleton generated.
+- Model image should be segmented for upper body in order to transfer the new style. Then stitch the transformed reference garment to the segmented model image.
+- To create the new look, refine the fit and shape of the garment to get the final result of the source garment to Model.
 
 ## Code and Data Details
 ### Data Details:
@@ -34,16 +30,20 @@ This problem can be approached in multiple ways:
 This is Virtual system to try different cloths on a 2D images to see the fit of the cloths. We have devloped three model to get the final out put of the cloths been tried on.
 >Steps are named as Shape the cloth to the model, Stitch the cloth to model and Refine the cloth which is stitched to the model.
 >Steps to run the models
->>Execute Stage1.ipynb and generate the .pth model file
+- Execute Stage1.ipynb and generate the .pth model file
+   
     parser.add_argument("stage", default="Shape", help='Shape, Stitch, Refine')
->>Execute Stage2.ipynb and generate the .pth model file
+- Execute Stage2.ipynb and generate the .pth model file
+   
     parser.add_argument("stage", default="Stitch", help='Shape, Stitch, Refine')
->>Execute Stage3.ipynb and generate the .pth model file
+- Execute Stage3.ipynb and generate the .pth model file
+    
     parser.add_argument("stage", default="Refine", help='Shape, Stitch, Refine')
     
->> once you have all the model files you will need to run them in sequence to get the final look of the models
->>Execute TryonFinalStage.ipynb
+>Once you have all the model files you will need to run them in sequence to get the final look of the models
+>Execute TryonFinalStage.ipynb
     Setting to exectue this model
+    
     def get_opt():
         parser = argparse.ArgumentParser()
         parser.add_argument("dataroot", default="data")
@@ -69,6 +69,18 @@ This is Virtual system to try different cloths on a 2D images to see the fit of 
 ## Acknowledgements
 
  - Thank you [Krishna Kumar Tiwari](https://www.linkedin.com/in/agentkk/) for all the support to work on this project
+
+## References
+- Pandey, N., & Savakis, A. (2019). POLY-GAN: MULTI-CONDITIONED GAN FOR FASHION SYNTHESIS A PREPRINT. https://arxiv.org/pdf/1909.02165v1.pdf
+- Pang, S., Tao, X., Xiong, N. N., & Dong, Y. (2021). An Efficient Style Virtual Try on Network for Clothing Business Industry. 1–10. http://arxiv.org/abs/2105.13183
+- Andriluka, M., Pishchulin, L., Gehler, P., & Schiele, B. (2014). 2D human pose estimation: New benchmark and state of the art analysis. Proceedings of the IEEE Computer          Society Conference on Computer Vision and Pattern Recognition, 3686–3693. https://doi.org/10.1109/CVPR.2014.471
+- Dong, H., Liang, X., Shen, X., Wang, B., Lai, H., Zhu, J., Hu, Z., & Yin, J. (2019). Towards multi-pose guided virtual try-on network. Proceedings of the IEEE International      Conference on Computer Vision, 2019-Octob(Iccv), 9025–9034. https://doi.org/10.1109/ICCV.2019.00912
+- Hauswiesner, S., Member, S., Straka, M., & Reitmayr, G. (2013). Virtual Try-On through Image-Based Rendering. 19(9), 1552–1565.
+
+##Code References
+- https://github.com/shionhonda/viton-gan
+- https://github.com/nile649/POLY-GAN
+- https://github.com/minar09/cp-vton-plus
  
 ## Authors
 
